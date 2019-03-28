@@ -172,7 +172,7 @@ išrikiuoja stundentus pagal galutinį pažymį,
 ## Benchmark'ai
 
 **Truputis informacijos norint suprasti benchmarkus**
-- Visi testai yra vykdomi Release profilyje, naudojant -O3 kompiliatoriaus flag'ą.
+- Visi testai yra vykdomi Release profilyje
 - Visi testai vykdomi su 10 namų darbų.
 - Egzistuoja keturios skėlimo strategijos ```A, B, C, D```
 - Strategija ```A``` - Studentai, kurių galutinis pažymys yra >= 5.0 yra perkeliami į ```mldc``` STL'ą, kurių yra mažesnis už 5.0 - į ```L_laivas``` STL'ą. Studentai iš pirminio STL'o netrinami
