@@ -31,7 +31,7 @@ Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 - Po 4, 5, 6 arba 7 funkcijos įvykdymo programa baigia darbą
 ---
 ## Versijų istorija (changelog)
-### [v1.1](https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v1.1)
+### [v1.0.1](https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v1.0.1)
 (2019-03-27)
 
 **Pridėta**
