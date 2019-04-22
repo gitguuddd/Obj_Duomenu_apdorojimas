@@ -181,7 +181,8 @@ išrikiuoja stundentus pagal galutinį pažymį,
 - Strategija ```D``` - Papildomos užduoties siūlomi skėlimo algoritmai:```m``` algoritmas, kuris skolininkus  perkelia į atskirą STL konteinerį, šiuos studentus ištrina iš pirminio STL konteinerio per ```erase``` funkciją, ```k``` algoritmas, kuris skolininkus irgi perkelia į atskirą STL konteinerį, kietus studentus perkelia į pirminio STL konteinerio priekį ir naudojant ```resize``` ir ```shrink_to_fit``` funkcijas iš šio STL konteinerio ištrina perteklinius kietus studentus/skolininkus ir atlaisvina atmintį 
 - ```vid``` ir ```med``` atitinkamai reiškia, kad teste galutinis pažymys buvo skaičiuotas pagal namų darbų įverčių vidurkį arba medianą
 
-**v1.1**
+**v1.0.1**
+
 **Papidomos užduoties skėlimo algoritmų (D strategijos) laikai dirbant su vector arba deque**
 
 | STL konteineris    | std::vector<> | std::deque<> |
