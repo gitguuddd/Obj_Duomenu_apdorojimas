@@ -31,7 +31,7 @@ Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 - Po 4, 5, 6 arba 7 funkcijos įvykdymo programa baigia darbą
 ---
 ## Versijų istorija (changelog)
-### [v1.1](https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v1.1)
+### [v1.0.1](https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v1.0.1)
 (2019-03-27)
 
 **Pridėta**
@@ -57,16 +57,16 @@ Saugomi 0 studentu(o) duomenys, pasirinkite ka daryti toliau:
 **Koreguota**
 - Sutvarkytas minor bug'as: išvedant skaičiavimus pagal mediana rašydavo, kad galutinis vertinimas buvo skaičiuotas pagal vidurkį
 - Pasirodo, kad listo nebuvo įmanoma panaudoti su didesniais studentų kiekiais vien dėl mano kaltės, nes neišvalydavau temp struktūros.
-- Paspartintas readinimas iš failo: eilutės duomenys nuskaitomi į temp struktūra. Priėjųs eilutės galą, struktūra yra pushbackinama STL'e.
+- Paspartintas readinimas iš failo: eilutės duomenys nuskaitomi į temp struktūra. Priėjųs eilutės galą, struktūra yra pushbackinama STL konteineryje.
 - Pasikartojantis kodas printinimo, skaičiavimo, vardų analižės vietose pakeistas kreipimusi į template funkcijas ```printtofile ,calc , names```
 - README fail'e pridėtos naudojimosi, įdiegimo instrukcijos.
 
 **Testavimo rezultatai**
 - Kaip ir seniau, visi testai buvo vykdkyti Release profilyje su -O3 flag'u, kiekvienas studentas turi po 10 namų darbų pažymių
 - Visų pirma reikia apsibrėžti ```a, b ir c```splitinimo strategijas
-- Strategija ```a``` - Studentai, kurių galutinis pažymys yra >= 5.0 yra perkeliami į ```mldc``` STL'ą, kurių yra mažesnis už 5.0 - į ```L_laivas``` STL'ą. Studentai iš pirminio STL'o netrinami
-- Strategija ```b``` - Studentai, kurių galutinis pažymys yra >=5.0 yra perkeliami į ```mldcstudents``` STL'ą, iš pirminio studentų STL'o šie studentai yra pašalinami, pirminis STL'as tampa ```L_laivas``` STL'u
-- Strategija ```c``` - Pirminis studentų STL'as yra išrikiuojamas didėjimo tvarka pagal galutinį pažymį, naudojant ```std::upper_bound``` randamas iteratorių ```up```, ties kuriuo reikšmės perlipa ```4.999999999``` ribą. Šis iteratoriaus yra naudojamas ```mldcstudents``` STL'o kontruktoriuje, resize`inant pirminį STL'ą yra gaunamas ```L_laivas``` STL.
+- Strategija ```a``` - Studentai, kurių galutinis pažymys yra >= 5.0 yra perkeliami į ```mldc``` STL konteinerį, kurių yra mažesnis už 5.0 - į ```L_laivas``` STL konteinerį. Studentai iš pirminio STL konteinerio netrinami
+- Strategija ```b``` - Studentai, kurių galutinis pažymys yra >=5.0 yra perkeliami į ```mldcstudents``` STL konteinerį, iš pirminio studentų STL konteinerio šie studentai yra pašalinami, pirminis STL konteineris tampa ```L_laivas``` STL konteineriu
+- Strategija ```c``` - Pirminis studentų STL konteineris yra išrikiuojamas didėjimo tvarka pagal galutinį pažymį, naudojant ```std::upper_bound``` randamas iteratorių ```up```, ties kuriuo reikšmės perlipa ```4.999999999``` ribą. Šis iteratoriaus yra naudojamas ```mldcstudents``` STL konteinerio kontruktoriuje, resize`inant pirminį STL konteinerį yra gaunamas ```L_laivas``` STL konteineris.
 
 ---
 ### [v0.5](https://github.com/gitguuddd/Obj_Duomenu_apdorojimas/releases/tag/v0.5)
@@ -182,16 +182,16 @@ išrikiuoja stundentus pagal galutinį pažymį,
 - Visi testai yra vykdomi Release profilyje, naudojant -O3 kompiliatoriaus flag'ą.
 - Visi testai vykdomi su 10 namų darbų.
 - Egzistuoja keturios skėlimo strategijos ```A, B, C, D```
-- Strategija ```A``` - Studentai, kurių galutinis pažymys yra >= 5.0 yra perkeliami į ```mldc``` STL'ą, kurių yra mažesnis už 5.0 - į ```L_laivas``` STL'ą. Studentai iš pirminio STL'o netrinami
-- Strategija ```B``` - Studentai, kurių galutinis pažymys yra >=5.0 yra perkeliami į ```mldcstudents``` STL'ą, iš pirminio studentų STL'o šie studentai yra pašalinami, pirminis STL'as tampa ```L_laivas``` STL'u
-- Strategija ```C``` - Pirminis studentų STL'as yra išrikiuojamas didėjimo tvarka pagal galutinį pažymį, naudojant ```std::upper_bound``` randamas iteratorių ```up```, ties kuriuo reikšmės perlipa ```4.999999999``` ribą. Šis iteratoriaus yra naudojamas ```mldcstudents``` STL'o kontruktoriuje, resize`inant pirminį STL'ą yra gaunamas ```L_laivas``` STL.
-- Strategija ```D``` - Papildomos užduoties siūlomi skėlimo algoritmai:```m``` algoritmas, kuris skolininkus  perkelia į atskirą STL'ą, šiuos studentus ištrina iš pirminio STL'o per ```erase``` funkciją, ```k``` algoritmas, kuris skolininkus irgi perkelia į atskirą STL'ą, kietus studentus perkelia į pirminio STL'o priekį ir naudojant ```resize``` ir ```shrink_to_fit``` funkcijas iš šio STL'o ištrina perteklinius kietus studentus/skolininkus ir atlaisvina atmintį 
+- Strategija ```A``` - Studentai, kurių galutinis pažymys yra >= 5.0 yra perkeliami į ```mldc``` STL konteinerį, kurių yra mažesnis už 5.0 - į ```L_laivas``` STL konteinerį. Studentai iš pirminio STL konteinerio netrinami
+- Strategija ```B``` - Studentai, kurių galutinis pažymys yra >=5.0 yra perkeliami į ```mldcstudents``` STL konteinerį,  iš pirminio studentų STL konteinerio šie studentai yra pašalinami, pirminis STL konteineris tampa ```L_laivas``` STL konteineriu
+- Strategija ```C``` - Pirminis studentų STL konteineris yra išrikiuojamas didėjimo tvarka pagal galutinį pažymį, naudojant ```std::upper_bound``` randamas iteratorių ```up```, ties kuriuo reikšmės perlipa ```4.999999999``` ribą. Šis iteratoriaus yra naudojamas ```mldcstudents``` STL'o kontruktoriuje, resize`inant pirminį STL konteinerį yra gaunamas ```L_laivas``` STL konteineris.
+- Strategija ```D``` - Papildomos užduoties siūlomi skėlimo algoritmai:```m``` algoritmas, kuris skolininkus  perkelia į atskirą STL konteinerį, šiuos studentus ištrina iš pirminio STL konteinerio per ```erase``` funkciją, ```k``` algoritmas, kuris skolininkus irgi perkelia į atskirą STL konteinerį, kietus studentus perkelia į pirminio STL konteinerio priekį ir naudojant ```resize``` ir ```shrink_to_fit``` funkcijas iš šio STL konteinerio ištrina perteklinius kietus studentus/skolininkus ir atlaisvina atmintį 
 - ```vid``` ir ```med``` atitinkamai reiškia, kad teste galutinis pažymys buvo skaičiuotas pagal namų darbų įverčių vidurkį arba medianą
 
 **v1.1**
 **Papidomos užduoties skėlimo algoritmų (D strategijos) laikai dirbant su vector arba deque**
 
-| STL'as    | std::vector<> | std::deque<> |
+| STL konteineris    | std::vector<> | std::deque<> |
 |-----------|---------------|--------------|
 | 10000 m   | 4.71733 s.    | 1.65675 s.   |
 | 10000 k   | 11.7855 s.    | 0.004923 s.  |
@@ -205,9 +205,9 @@ išrikiuoja stundentus pagal galutinį pažymį,
 
 **v1.0**
 
-**Skirtingų STL'u naudojamos atminties kiekis pritaikant a strategiją**
+**Skirtingų STL konteineriu naudojamos atminties kiekis pritaikant a strategiją**
 
-| STL'as                                           | std::vector<> | std::deque<> | std::list<> |
+| STL konteineris                                          | std::vector<> | std::deque<> | std::list<> |
 |--------------------------------------------------|:-------------:|:------------:|:-----------:|
 | Naudojamos  atminties kiekis programos pradžioje |     635 MB    |   966.6 MB   |   971.6 MB  |
 | 10 skirtumas                                     |    + 0.2 MB   |   + 0.2 MB   |   + 0.3 MB  |
@@ -216,7 +216,7 @@ išrikiuoja stundentus pagal galutinį pažymį,
 | 10000 skirtumas                                  |    + 3.2 MB   |   + 3.9 MB   |   + 2.4 MB  |
 | 100000 skirtumas                                 |   + 34.1 MB   |   + 30.8 MB  |  + 36.9 MB  |
 | 1000000 skirtumas                                |   + 616.2 MB  |  + 293.4 MB  |  + 322.6 MB |
-- Iš lentelės duomenų matome, kad ```vector```  STL'as yra labai jautrus tokiam atminties švaistymui
+- Iš lentelės duomenų matome, kad ```vector```  STL konteineris yra labai jautrus tokiam atminties švaistymui
 
 **Programos benchmark'as prieš optimizuojant a ir b strategijas**
 - a ir b strategijoms buvo būdingas štai toks kodas
@@ -243,7 +243,7 @@ if(pchoice=='v'){
 
 
 ```
-| STL'as        | std::vector<> | std::deque<> | std::list<>  |
+| STL konteineris      | std::vector<> | std::deque<> | std::list<>  |
 |---------------|---------------|--------------|--------------|
 | 10med. A      | 0.004149 s.   | 0.007609 s.  | 0.004057 s.  |
 | 10vid. A      | 0.004931 s.   | 0.004841 s.  | 0.004829 s.  |
@@ -281,7 +281,7 @@ if(pchoice=='v'){
 | 1000000vid. B | 31.42009 s.   | 32.16509 s.  | 30.41746 s.  |
 | 1000000med. C | 40.5757 s.    | 29.35842 s.  | 35.62856 s.  |
 | 1000000vid. C | 38.07228 s.   | 38.83359 s.  |  37.20177 s. |
-- Iš lentelės duomenų matome, kad mano programos atveju dirbant su skirtingais STL'ais programa sugaišta panašų kiekį laiko
+- Iš lentelės duomenų matome, kad mano programos atveju dirbant su skirtingais STL konteineriais programa sugaišta panašų kiekį laiko
 
 **Programos darbas po a ir b strategijų optimizavimo**
 - ```c``` strategija į lentelę neįtraukta, nes ji nesikeitė. Optimizavus ```b``` strategiją, savo veikimo principu ji tapo labai panaši į ```c``` strategiją
@@ -298,7 +298,7 @@ if(pchoice=='v')
 ```
 - Šiuo atveju rastas ```upl```  iteratorius  ```a``` strategijos atveju yra panaudojamas konstruojant ```L_laivasl``` ir ```mldcl``` listus, ```b``` strategijos atveju šis iteratorius panaujomas konstruojant ```mldcstudentsl``` list'ą
 
-| STL'as        | std::vector<> | std::deque<> | std::list<>  |
+| STL konteineris       | std::vector<> | std::deque<> | std::list<>  |
 |---------------|---------------|--------------|--------------|
 | 10med. A      | 0.004988 s.   | 0.007974 s.  | 0.0039868 s. |
 | 10vid. A      | 0.005936 s.   | 0.002994 s.  | 0.002991 s.  |
@@ -326,9 +326,9 @@ if(pchoice=='v')
 | 1000000vid. B | 28.89283 s.   | 30.00679 s.  | 29.0454 s.   |
 
 **v0.5**
-**Testavimo rezultatai naudojant skirtingus STL'us**
+**Testavimo rezultatai naudojant skirtingus STL konteinerius**
 
-| STL'as     | std::vector<> | std::deque<> | std::list<>  |
+| STL konteineris     | std::vector<> | std::deque<> | std::list<>  |
 |------------|---------------|--------------|--------------|
 | 10vid      | 0.009014 s.   | 0.005128 s.  | 0.003992 s.  |
 | 10med      | 0.006949 s.   | 0.002992 s.  | 0.004979 s.  |
